@@ -1,0 +1,24 @@
+.menus{
+    height: 1.306667rem;
+    padding: 0 1px;
+    border-top: 1px solid #C6C6C6;
+    li{
+        float: left;
+        a{
+            display: block;
+            width: 2.493333rem;
+            color: #ccc;
+            font-size: .266667rem;
+            line-height: .546667rem;
+            text-align: center;
+            padding-top: .186667rem;
+            i.fa{
+                display: block;
+                font-size: .56rem;
+            }
+        }
+        .active{
+            color: #FC0;
+        }
+    }
+}

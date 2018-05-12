@@ -1,0 +1,28 @@
+body,h1,h2,h3,h4,p,a,input,img,ul,li,ol,dl,dt,dd{
+	padding:0;
+	margin:0;}
+ul,ol{
+	list-style:none;}
+img{
+	display:block;
+	border:0;}
+input{
+    /*去掉高亮*/
+	outline:none;}
+header,footer,section,main,nav{
+	display:block;}
+body{
+	font-size:.193237rem;
+	font-family:"微软雅黑";
+	color:#3e3e3e;}
+a{
+	text-decoration:none;
+	color:#0dc441;}
+a:hover{
+	text-decoration:underline;}
+i{font-style:normal;}
+*{box-sizing:border-box;}
+
+html,body,#app,.Mls,.Mls>div{height: 100%;}
+.Mls>div{display: flex; flex-direction: column;}
+.main{flex: 1; overflow-x: hidden;}
