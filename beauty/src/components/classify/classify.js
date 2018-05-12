@@ -8,7 +8,7 @@ class Classify extends React.Component{
         return(
             <div>
                 <div className="main">
-                    <h1>Classify</h1>
+                    <h1>商品分类</h1>
                 </div>
                 <Menus />
             </div>
