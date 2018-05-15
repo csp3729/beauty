@@ -7,10 +7,10 @@ class Cart extends React.Component{
     render(){
         return(
             <div>
-                <div  className="main">
+                <div className="main">
                     <h1>Cart</h1>
                 </div>
-                <Menus />
+                <Menus test="cart"/>
             </div>
         )
     }

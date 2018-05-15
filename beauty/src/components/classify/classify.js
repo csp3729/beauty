@@ -10,7 +10,7 @@ class Classify extends React.Component{
                 <div className="main">
                     <h1>Classify</h1>
                 </div>
-                <Menus />
+                <Menus test="classify"/>
             </div>
         )
     }
