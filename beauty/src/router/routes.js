@@ -8,6 +8,7 @@ import User from '../components/user/user';
 import Login from '../components/user/login/login';
 import Order from '../components/user/order/order';
 import Reg from '../components/user/registration/registration';
+import Search from '../components/home/search/search';
 
 import './base.css';
 
@@ -38,6 +39,7 @@ const routes = (
         <Route path="/login" component={Login} />
         <Route path="/order" component={Order} />
         <Route path="/reg" component={Reg} />
+        <Route path="/search" component={Search} />
     </Route>
 )
 
