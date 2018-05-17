@@ -1,0 +1,72 @@
+.main{
+    .jk-head{
+        margin:15px 32px 25px 32px ;
+        display:flex;
+        justify-content: space-between;
+        .search{
+            width: 620px;
+            justify-content:center;
+
+            i{padding-left:10px;background:#F3F6F9;width: 60px;height: 60px;font-size: 35px;line-height: 60px;float: left;border-top-left-radius:15px;border-bottom-left-radius:15px;}
+            input{background:#F3F6F9;width: 560px;height: 60px;border:0px solid #fff;font-size: 30px;border-top-right-radius:15px;border-bottom-right-radius:15px;}
+        }
+        .msg{font-size: 35px;line-height: 60px;
+        }
+    }
+    .jk-classifylist{
+        display:flex;
+        justify-content: space-between;
+        flex-wrap:wrap;
+        li:nth-child(1){background:url('./img/goodslist1.png');}
+        li:nth-child(2){background:url('./img/goodslist2.png');}
+        li:nth-child(3){background:url('./img/goodslist3.png');}
+        li:nth-child(4){background:url('./img/goodslist4.png');}
+        li:nth-child(5){background:url('./img/goodslist5.png');}
+        li:nth-child(6){background:url('./img/goodslist6.png');}
+        li:nth-child(7){background:url('./img/goodslist7.png');}
+        li:nth-child(8){background:url('./img/goodslist8.png');}
+        li:nth-child(9){background:url('./img/goodslist9.png');}
+        li:nth-child(10){background:url('./img/goodslist10.png');}
+        li:nth-child(11){background:url('./img/goodslist11.png');}
+        li:nth-child(12){background:url('./img/goodslist12.png');}
+        li:nth-child(13){background:url('./img/goodslist13.png');}
+        li:nth-child(14){background:url('./img/goodslist14.png');}
+        li:nth-child(15){background:url('./img/goodslist15.png');}
+        li:nth-child(16){background:url('./img/goodslist16.png');}
+        border-bottom:10px solid #F3F6F9;
+        li{
+            a{
+                width: 187px;
+                height: 268px;
+                display:block; 
+                border:1px solid #F3F6F9; 
+            }
+        }
+    }
+    .jk-goodstab{
+        display:flex;
+        justify-content: space-around;
+        height: 105px;
+        align-items:center;
+        span:nth-child(1){border-bottom:5px solid #000;}
+        span{
+            font-size: 30px;
+            font-weight:700;
+        }
+        .foucus{border-bottom:5px solid #000;}
+    }
+    .jk-goodslist{
+        display:flex;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        .jk-goods{}
+        img{width: 345px;height: 516px;background:url('./img/goodslist16.png') no-repeat;background-size:cover;}
+        .goodsname{font-size: 26px;color:#858698;}
+        .details{
+            color:#343434;
+            font-size: 26px;
+            display:flex;
+            justify-content:space-between;
+        }
+    }
+}
