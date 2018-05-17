@@ -21,11 +21,8 @@ class Goods extends React.Component{
         return Object.keys(item);
     }
     showDetail(e){
-        var id = e.target.parentNode.id
-        console.log(e)
-        http.post('',id).then((error,res)=>{
-            console.log(error,res)
-        })
+        var id = e.target.parentNode.id;
+        location.href = '#/details/'+ id;
     }
     render(){
         return (

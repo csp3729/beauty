@@ -23,13 +23,15 @@ class Banner extends React.Component{
     }
     render(){
         return (
-            <div className="swiper-container">
-                <div className="swiper-wrapper">
-                    <div className="swiper-slide"><img src="src/img/banner1.jpg" /></div>
-                    <div className="swiper-slide"><img src="src/img/banner2.jpg" /></div>
-                    <div className="swiper-slide"><img src="src/img/banner3.jpg" /></div>
+            <div style={{width :'100%',height :'390px'}}>
+                <div className="swiper-container">
+                    <div className="swiper-wrapper">
+                        <div className="swiper-slide"><img src="src/img/banner1.jpg" /></div>
+                        <div className="swiper-slide"><img src="src/img/banner2.jpg" /></div>
+                        <div className="swiper-slide"><img src="src/img/banner3.jpg" /></div>
+                    </div>
+                    <div className="swiper-pagination"></div>
                 </div>
-                <div className="swiper-pagination"></div>
             </div>
         )
     }
