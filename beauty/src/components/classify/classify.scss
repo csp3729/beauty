@@ -1,12 +1,14 @@
 .main{
-    .jk-head{
+    display:flex;
+    flex-direction:column;
+    .jk-classifyHead{
         margin:15px 32px 25px 32px ;
         display:flex;
         justify-content: space-between;
-        .search{
+        height: 60px;
+        .jk-classifyHeadSearch{
             width: 620px;
             justify-content:center;
-
             i{padding-left:10px;background:#F3F6F9;width: 60px;height: 60px;font-size: 35px;line-height: 60px;float: left;border-top-left-radius:15px;border-bottom-left-radius:15px;}
             input{background:#F3F6F9;width: 560px;height: 60px;border:0px solid #fff;font-size: 30px;border-top-right-radius:15px;border-bottom-right-radius:15px;}
         }
@@ -48,25 +50,39 @@
         justify-content: space-around;
         height: 105px;
         align-items:center;
-        span:nth-child(1){border-bottom:5px solid #000;}
+        
         span{
             font-size: 30px;
             font-weight:700;
         }
-        .foucus{border-bottom:5px solid #000;}
+        .tabfoucus{border-bottom:5px solid #000;}
     }
     .jk-goodslist{
         display:flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap:wrap;
-        .jk-goods{}
-        img{width: 345px;height: 516px;background:url('./img/goodslist16.png') no-repeat;background-size:cover;}
-        .goodsname{font-size: 26px;color:#858698;}
-        .details{
-            color:#343434;
-            font-size: 26px;
-            display:flex;
-            justify-content:space-between;
+        flex:1;
+        .jk-goods{
+            border:1px solid #858698;
+            margin:10px;
+            img{width: 345px;height: 516px;background-size:cover;}
+            .goodsname{
+                font-size: 26px;
+                color:#858698;
+                width: 345px;
+                overflow:hidden; 
+                text-overflow:ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient:vertical;
+                -webkit-line-clamp:2;}
+            .details{
+                color:#343434;
+                font-size: 26px;
+                display:flex;
+                justify-content:space-between;
+            }
         }
+        
+        
     }
 }

@@ -1,0 +1,219 @@
+.main{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    .jk-detailsHead{
+        padding:30px;
+        height: 100px;
+        display:flex;
+        justify-content: space-between;
+        font-size: 42px;
+        color:#9A999A;
+        div{
+            i:nth-child(1){margin-right:60px;}
+        }
+    }
+    .jk-detailsMain{
+        flex:1;
+        overflow-x: hidden;
+        .jk-detailsMainImg{
+            display:flex;
+            justify-content: space-between;
+            padding-left:25px;
+            overflow:hidden;
+            img{
+                margin:0 10px;
+                height: 868px;
+            }
+        }
+        .jk-detailsMainGoodName{
+            padding:38px 0 0 30px;
+            font-size: 32px;
+            line-height: 44px;
+            color:#343434;
+        }
+        .jk-detailsMainPrice{
+            span{margin-left:25px;}
+            span:nth-child(1){
+                font-size: 50px;
+                color:#EE7099;
+            }
+            span:nth-child(2){
+                font-size: 30px;
+                color:#9A999A;
+            }
+            span:nth-child(3){
+                padding:5px;
+                font-size: 25px;
+                background:#D22D4B;
+                border-radius:10px;
+                color:#fff;
+            }
+        }
+        .jk-detailsMainDescribe{
+            padding: 0 25px;
+            display:flex;
+            justify-content:space-between;
+            font-size:25px;
+            color:#838382;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        .jk-detailsMainPost{
+            font-size: 28px;
+            display:flex;
+            justify-content:space-around;
+            color:#333333;
+            line-height: 58px;
+            border-bottom: 5px solid #ccc;
+        }
+        .jk-detailsMainEvaluate{
+            padding: 0 25px;
+            font-size: 30px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .jk-detailsMainGuide{
+            border-top:10px solid #ccc;
+            font-size: 25px;
+            line-height: 40px;
+            padding-left:25px;
+            .jk-detailsMainGuideImg{
+                display:flex;
+                justify-content:space-between;
+                img{width: 375px;height: 425px;margin:5px;}
+            }
+        }
+    }
+    .jk-detailsMenus{
+        font-size: 30px;
+        display:flex;
+        justify-content:space-between;
+        height: 100px;
+        line-height: 50px;
+        align-items:center;
+        text-align:center;
+        span{
+            flex:1;
+        }
+        span:nth-child(4){background:#fc0;flex:3;line-height: 100px;color:#fff;}
+        span:nth-child(5){background:#EE7099;flex:2;line-height: 100px;color:#fff;}
+        i{
+            font-size: 40px;
+            color:#EF819B;
+            display:block;
+        }
+    }
+    .jk-detailsSelect{
+        background-color:rgba(222,222,222,0.5);
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        display:none;
+        .jk-detailsSelectMain{
+            background:#fff;
+            height: 832px;
+            width: 100%;
+            position:absolute;
+            bottom:0;
+            display:none;
+            .jk-detailsSelectMaincontainer{
+                padding:25px;
+                display:flex;
+                flex-direction:column;
+                justify-content:space-between;
+                height: 830px;
+                .jk-detailsSelectMainGood{
+                    display:flex;
+                    justify-content:space-around;
+                    height: 190px;
+                    padding-bottom:10px;
+                    border-bottom: 2px solid #ccc;
+                    img{
+                        
+                        width: 165px;
+                        height: 165px;
+                        padding: 5px;
+                        border: 1px solid #ccc;
+                    }
+                    .jk-MainGoodDesribes{
+                        padding:0 20px;
+                        span:nth-child(1){
+                            font-size: 32px; 
+                            line-height: 40px;
+                            display:block;
+                            width:418px;
+                            overflow:hidden; 
+                            text-overflow:ellipsis;
+                            display: -webkit-box;
+                            -webkit-box-orient:vertical;
+                            -webkit-line-clamp:2;
+                        }
+                        span:nth-child(3){font-size: 32px; line-height: 32px; color:#EE7099;}
+                        span:nth-child(4){font-size: 24px; color:#A2A1A2;}
+                        span:nth-child(6){font-size: 28px; line-height: 40px; color:#9A999A;}
+                    }
+                    .jk-detailsSelectClose{
+                        width:60px;
+                        font-size: 60px;
+                        display:block;
+                        height: 190px;
+                        vertical-align:top;
+                    }
+                    
+                }
+                .jk-detailsSelectMainColor{
+                    font-size: 30px;
+                    h4{margin-bottom:20px;}    
+                    .colorFocus{background:#EE7099;color:#fff;}
+                    span{
+                        margin:20px 35px 10px 0;
+                        padding:10px;
+                        background:#FaFaFa;
+                        
+                    }
+                }
+                .jk-detailsSelectMainSize{
+                    font-size: 30px;
+                    h4{margin-bottom:20px;}    
+                    .sizeFocus{background:#EE7099;color:#fff;}
+                    span{
+                        margin:20px 35px 10px 0;
+                        padding:10px;
+                        background:#FaFaFa;
+                        
+                    }
+                }
+                .jk-detailsSelectMainQty{  
+                    font-size: 30px; 
+                    h4{margin-bottom:20px;}                
+                    span{
+                        float: left;
+                        font-size: 36px;
+                        color:#CDCDCD;
+                        border:1px solid #ccc;
+                    }
+                    input{
+                        width: 50px;
+                        height: 50px;
+                        font-size: 30px;
+                        border:1px solid #ccc;
+                        float: left;
+                        text-align:center;
+                    }
+                }
+                .jk-detailsSelectMainComfirm{
+                    font-size: 30px;
+                    text-align:center;
+                    margin:18px 210px;
+                    background:#EE7099;
+                    line-height: 60px;
+                    color:#fff;
+                }
+            }
+        }
+    }
+    
+}
