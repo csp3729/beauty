@@ -1,0 +1,98 @@
+.popular{
+    width: 100%;
+    height: 830px;
+    .popular_ing{
+        width: 100%;
+        height: 60px;
+        padding-top: 20px;
+        font-size:28px;
+        color:#131315;
+        i.fas{
+            float:left;
+            width: 50px;
+            height: 40px;
+            color:#F6C0A1;
+            padding-left: 20px;
+            padding-top: 9px;
+        }
+        h3{
+            float:left;
+            width: 200px;
+        }
+        span{
+            float:right;
+            width: 170px;
+            color:#919193;
+            a{
+                color:#919193;
+            }
+        }
+    }
+    .popular_p{
+        width: 3200px;
+        height: 670px;
+        position:relative;
+        ul{
+            position:absolute;
+            left:0;
+            top:0;
+            width: 3200px;
+            height: 670px;
+            display:flex;
+            flex-wrap:wrap;
+            li{
+                float: left;
+                width: 187px;
+                padding-left:20px;
+                padding-top:20px;
+                font-size:28px;
+                color:#474747;
+                text-align:center;
+                div{
+                    width: 144px;
+                    height: 144px;
+                    img{
+                        width: 144px;
+                        height: 144px;
+                        border-radius: 50% 70% 50% 70%;
+                    }
+                }
+                p{
+                    line-height: 66px;
+                }
+            }
+        }
+    }
+    .popular_d{
+        width: 100%;
+        height: 90px;
+        padding-top: 30px;
+        .popular_d_box{
+            width: 160px;
+            height: 100%;
+            margin:0 auto;
+            .taday{
+                width: 55px;
+                height: 30px;
+                font-size:23px;
+                color:#fff;
+                background: #ED7E45;
+                border-radius: 33%;
+                float: left;
+            }
+            .span{
+                display:block;
+                width: 15px;
+                height: 15px;
+                background: #666666;
+                border-radius:50%;
+                margin-top:10px;
+                margin-left: 10px;
+                float: left;
+            }
+            .red{
+                background: red;
+            }
+        }
+    }
+}
