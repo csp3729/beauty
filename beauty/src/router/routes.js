@@ -57,7 +57,6 @@ const routes = (
         <Route path="/site" component={Site}/>
         <Route path="/login" component={Login} />
         <Route path="/reg" component={Reg} />
-<<<<<<< HEAD
         <Route path="/setup" component={Setup} />
         <Route path="/order" component={Order}>
             <Route path="/order/all" component={All} active='all' />
@@ -66,9 +65,7 @@ const routes = (
             <Route path="/order/estimate" component={Estimate} active='estimate'/>
             <Route path="/order/salesreturn" component={Salesreturn} active='salesreturn'/>
         </Route>
-=======
         <Route path="/search" component={Search} />
->>>>>>> 1f37bf64e5601de47950b96222e91a26cdea67f7
     </Route>
 )
 
