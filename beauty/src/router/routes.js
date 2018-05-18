@@ -8,7 +8,6 @@ import User from '../components/user/user';
 import Login from '../components/user/login/login';
 import Order from '../components/user/order/order';
 import Reg from '../components/user/registration/registration';
-<<<<<<< HEAD
 import Setup from '../components/setup/setup';
 import Personal from '../components/user/personal/personal';
 import Nicknam from '../components/user/personal/set/nikename';
@@ -17,9 +16,7 @@ import PerExplain from '../components/user/personal/set/perExplain';
 import Site from '../components/user/personal/set/site';
 
 import{All, Payment, Take, Estimate, Salesreturn} from '../components/user/order/allorder/allorder'
-=======
 import Search from '../components/home/search/search';
->>>>>>> 1f37bf64e5601de47950b96222e91a26cdea67f7
 
 import './base.css';
 
