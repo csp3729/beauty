@@ -43,9 +43,15 @@ class Registration extends React.Component{
                 return
             } else {
                 http.post('register', {username, password}).then((res) => {
-                    console.log(res.body);
                     if(res.body.status){
-                        console.log(this)
+                        http.post('login',  {username, password}).then((res) => {
+                            if(res.body.status){
+                                window.localStorage.setItem('token', res.body.data);
+                                let message = JSON.stringify(res.body.message)
+                                window.localStorage.setItem('message', message);
+                                this.props.router.push('user')
+                            }
+                        })
                     } else {
                         warn = '该手机号码已经注册';
                         this.setState({

@@ -1,0 +1,32 @@
+.setup{
+    background-color: rgb(235, 232, 232);
+    .head{
+        background-color: #fff;
+        overflow: hidden;
+        position: relative;
+        padding: .84rem .453333rem .306667rem;
+        margin-bottom: .533333rem;
+        h2{
+            font-size: .48rem;
+            line-height: .48rem;
+            margin-bottom: .586667rem;
+            background-color: #fff;
+            text-align: center;
+        }
+        a{
+            position: absolute;
+            i{
+                display: block;
+            }
+        }
+        .return{
+            font-size: .506667rem;
+            color: #727272;
+            padding-left: .08rem;
+            top: .84rem;
+        }
+    }
+    // padding: .866667rem .4rem 0 .4rem;
+    // text-align: center;
+    
+}

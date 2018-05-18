@@ -2,24 +2,38 @@ import React from 'react';
 import {Link} from 'react-router';
 
 import Menus from '../menus/menus';
+import http from '../../utils/httpclient';
 
 import './user.scss';
 
 class User extends React.Component{
+    state = {
+        data:{}
+    }
+
+    componentDidMount(){
+        let username = window.localStorage.getItem('username')
+        http.post('getUser', {username}).then((res) => {
+            this.setState({
+                data: JSON.parse(res.text).data[0]
+            })
+        })
+    }
+
     render(){
         return(
             <div className="user">
                 <div className="main">
                     <div className="head">
-                        <i className="fas fa-cog"></i>
+                        <Link to="/setup"><i className="fas fa-cog"></i></Link>
                         <i className="far fa-comment-dots"></i>
                     </div>
                     <div className="user-tow">
                         <div className="portrait">
-                            <img src=""/>
+                            <Link to="/personal"><img src=""/></Link>
                         </div>
                         <div className="tow-user">
-                            <p className="username">Chen_yn</p>
+                            <p className="username">{this.state.data.nickname}</p>
                             <p>累计积分：<span>0</span></p>
                         </div>
                         <div className="member">
@@ -31,11 +45,11 @@ class User extends React.Component{
                     </div>
                     <div className="user-three">
                         <ul>
-                            <li><Link to="/order"><i className="fab fa-cc-amazon-pay"></i>待付款</Link></li>
-                            <li><Link to="/order"><i className="fas fa-plane"></i>待收货</Link></li>
-                            <li><Link to="/order"><i className="far fa-keyboard"></i>待评价</Link></li>
-                            <li><Link to="/order"><i className="fas fa-exchange-alt"></i>退换货</Link></li>
-                            <li><Link to="/order"><i className="far fa-clipboard"></i>全部订单</Link></li>
+                            <li><Link to="/order/payment"><i className="fab fa-cc-amazon-pay"></i>待付款</Link></li>
+                            <li><Link to="/order/take"><i className="fas fa-plane"></i>待收货</Link></li>
+                            <li><Link to="/order/estimate"><i className="far fa-keyboard"></i>待评价</Link></li>
+                            <li><Link to="/order/salesreturn"><i className="fas fa-exchange-alt"></i>退换货</Link></li>
+                            <li><Link to="/order/all"><i className="far fa-clipboard"></i>全部订单</Link></li>
                         </ul>
                     </div>
                     <div className="user-four">

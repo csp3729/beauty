@@ -31,6 +31,11 @@
                 border-radius: 50%;
                 background-color: #fc0;
                 margin-right: .266667rem;
+                overflow: hidden;
+                img{
+                    width: 1.333333rem;
+                    height: 1.333333rem;
+                }
             }
             .tow-user{
                 margin-right: .266667rem;

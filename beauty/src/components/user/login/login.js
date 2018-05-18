@@ -23,12 +23,12 @@ import './login.scss';
 class Login extends React.Component{
     state = {
         code: '',
-        active: ''
+        active: '',
+        modl:''
     }
 
     componentDidMount(){
         this.randomCode()
-        console.log(this)
     }
 
     changeCode(){
@@ -77,7 +77,21 @@ class Login extends React.Component{
                 http.post('login',  {username, password}).then((res) => {
                     if(res.body.status){
                         window.localStorage.setItem('token', res.body.data);
+                        // let message = JSON.stringify(res.body.message)
+                        window.localStorage.setItem('username', username);
                         this.props.router.push('user')
+                    } else {
+                        warn = '用户名或密码不正确';
+                        this.setState({
+                            modl: 'block',
+                            status: warn
+                        })
+                        setTimeout(function(){
+                            this.setState({
+                                modl: 'none',
+                                status: ''
+                            })
+                        }.bind(this),2000)
                     }
                 })
             }
@@ -101,10 +115,10 @@ class Login extends React.Component{
         return(
             <div className="login">
                 <h2>登录</h2>
-                <Link className="return" to="/user"><i className="fas fa-chevron-left"></i></Link>
+                <Link className="return" to="/"><i className="fas fa-chevron-left"></i></Link>
                 {/* <Link className="test" to="/login"><i className="fas fa-ellipsis-h"></i></Link> */}
                 <span className="fas fa-ellipsis-h"></span>
-                <div></div>
+                <div></div>{/* 点击span显示该div,未写 */}
                 <ul>
                     <li>
                         <h4>你的帐号</h4>
