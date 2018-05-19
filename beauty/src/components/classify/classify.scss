@@ -9,10 +9,24 @@
         .jk-classifyHeadSearch{
             width: 620px;
             justify-content:center;
+            
             i{padding-left:10px;background:#F3F6F9;width: 60px;height: 60px;font-size: 35px;line-height: 60px;float: left;border-top-left-radius:15px;border-bottom-left-radius:15px;}
             input{background:#F3F6F9;width: 560px;height: 60px;border:0px solid #fff;font-size: 30px;border-top-right-radius:15px;border-bottom-right-radius:15px;}
         }
-        .msg{font-size: 35px;line-height: 60px;
+        .ceiling{
+            position:fixed;
+            left:92px;
+            top:0;
+            background: #fff;
+            i{
+                position:fixed;
+                top: 0; 
+                left:33px; 
+                color:#000;
+            }
+            input{position:fixed;}
+        }
+        .msg{font-size: 35px;line-height: 70px;position:fixed;right:32px;top:0;
         }
     }
     .jk-classifylist{
@@ -82,7 +96,23 @@
                 justify-content:space-between;
             }
         }
-        
-        
+    }
+    .jk-classifyToTop{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background:#000;
+        opacity:0.8;
+        position:fixed;
+        right:60px;
+        bottom:140px;
+        color:#fff;
+        text-align:center;
+        line-height: 80px;
+        font-size: 30px;
+        display:none;
+    }
+    .toTopDisappear{
+        display:block;
     }
 }

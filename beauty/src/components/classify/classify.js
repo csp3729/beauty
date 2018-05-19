@@ -2,21 +2,71 @@ import React from 'react';
 import {Link,hashHistory} from 'react-router';
 import Menus from '../menus/menus';
 import './classify.scss';
-import http from 'superagent'
-import $ from '../../jquery-3.2.1.js'
+import http from 'superagent';
+import $ from '../../jquery-3.2.1.js';
+import LazyLoad from 'react-lazyload';
+import {lazyload} from '../../lazyload.min.js';
 class Classify extends React.Component{
     state = {
         data: [],
-        targetData: []
-        
+        targetData: [],
+        search: '',
+        toTop: ''
     }
     componentDidMount(){
         http.get('http://10.3.133.75:88/getAllGoods').end((req, res) => {
-            console.log(res.body.data)
+            
             this.setState({
-                data: res.body.data
+                data: res.body.data.splice(0,4)
             })
         })
+        document.querySelector('.Mls .main').addEventListener('scroll',this.handleScroll.bind(this));  
+    }
+    handleScroll(){
+        let top = document.querySelector('.Mls .main').scrollTop;
+        // console.log(top)
+        if(top >= 53){
+            this.setState({
+                search: 'ceiling'
+            })
+        }if(top <= 53){
+            this.setState({
+                search: ''
+            })
+        }
+        if(top >= 1334){
+            this.setState({
+                toTop: 'toTopDisappear'
+
+            })
+        }if(top <= 1334){
+            this.setState({
+                toTop: ''
+            })
+        }if(top >= 1286){
+            http.get('http://10.3.133.75:88/getAllGoods').end((req, res) => {
+                this.setState({
+                    data: res.body.data.splice(0,8)
+                })
+                // console.log(this.state.data)
+            })
+        }if(top >= 2572){
+            http.get('http://10.3.133.75:88/getAllGoods').end((req, res) => {
+                this.setState({
+                    data: res.body.data.splice(0,12)
+                })
+                // console.log(this.state.data)
+            })
+        }if( top >= 3857){
+            http.get('http://10.3.133.75:88/getAllGoods').end((req, res) => {
+                this.setState({
+                    data: res.body.data.splice(0,17)
+                })
+                // console.log(this.state.data)
+            })
+        }
+       
+        
     }
     defaultSort(e){
         e.target.classList.add('tabfoucus')
@@ -82,14 +132,18 @@ class Classify extends React.Component{
         // }
         location.href = '#/details/'+ targetid;
     }
+    toTop(){
+        $('.Mls .main').animate({scrollTop:0}, 500); 
+    }
     render(){
         return(
             <div>
                 <div className="main">
+                    <div className={`jk-classifyToTop ${this.state.toTop}`} onClick={this.toTop}>TOP</div>
                     <div className='jk-classifyHead'>
-                        <div className='jk-classifyHeadSearch'>
+                        <div className={`jk-classifyHeadSearch ${this.state.search}`}>
                             <i className="fas fa-search"></i>
-                            <input type="text" name="" placeholder="搜索"/>
+                            <Link to="/search"><input type="text" placeholder="搜索" /></Link>
                         </div>
                         <div className='msg'>
                             <i className="far fa-envelope"></i>
@@ -120,6 +174,7 @@ class Classify extends React.Component{
                         <span className='price' onClick={this.priceSort.bind(this)}>价格</span>
                     </div>
                     <div className='jk-goodslist'>
+                        
                         {
                             this.state.data.map((item,index) => {
                                 // console.log(item.path)
@@ -127,9 +182,13 @@ class Classify extends React.Component{
                                 let arr = path.split(',');
                                 let id = item.id;
                                 return(
+                                    
                                     <Link to='' key={id} data-id={id} onClick={this.transmission.bind(this)}>
+                                    
                                     <div className='jk-goods' key={arr[1]}>
-                                        <img src={arr[0]} key={arr[0]}/>
+                                        
+                                            <img src={arr[0]} key={arr[0]}/>
+                                        
                                         <p className='goodsname' key={item.goodsname}>{item.goodsname}</p>
                                         <div className='details' key={item.index}>
                                             <p className='price' key={item.prices}>￥{item.prices}</p>
@@ -138,10 +197,13 @@ class Classify extends React.Component{
                                             </p>
                                         </div>
                                     </div>
+
                                     </Link>
+                                    
                                 )
                             })
                         }
+                        
                     </div>
                 </div>
                 <Menus />

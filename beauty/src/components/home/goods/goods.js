@@ -13,9 +13,32 @@ class Goods extends React.Component{
         http.get('http://10.3.133.75:88/getAllGoods').end((error,res)=>{
             var arr = JSON.parse(res.text)
             this.setState({
-                data: arr.data
+                data: arr.data.splice(0,6)
             })
         })
+        document.querySelector('.Mls .main').addEventListener('scroll', this.handleScroll.bind(this));
+    }
+    handleScroll(){
+        let top = document.querySelector('.Mls .main').scrollTop
+        // console.log(top)
+        if( top >=2200){
+            http.get('http://10.3.133.75:88/getAllGoods').end((error,res)=>{
+                var arr = JSON.parse(res.text)
+                this.setState({
+                    data: arr.data.splice(0,17)
+                })
+            })
+        }
+        // else if( top >2890){
+        //     http.get('http://10.3.133.75:88/getAllGoods').end((error,res)=>{
+        //         var arr = JSON.parse(res.text)
+        //         this.setState({
+        //             data: arr.data.splice(0,8)
+        //         })
+        //     })
+        // }
+
+
     }
     getKeys(item = {}){
         return Object.keys(item);

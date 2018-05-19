@@ -17,13 +17,12 @@
         flex:1;
         overflow-x: hidden;
         .jk-detailsMainImg{
-            display:flex;
-            justify-content: space-between;
-            padding-left:25px;
-            overflow:hidden;
+            padding-left:30px;
+            .swiper-slide:nth-child(1) {width: 80%;}
+            .swiper-slide:nth-child(2n) {width: 90%;}
             img{
-                margin:0 10px;
                 height: 868px;
+                width: 580px;
             }
         }
         .jk-detailsMainGoodName{
@@ -79,9 +78,16 @@
             line-height: 40px;
             padding-left:25px;
             .jk-detailsMainGuideImg{
-                display:flex;
-                justify-content:space-between;
-                img{width: 375px;height: 425px;margin:5px;}
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                .swiper-slide{
+                    background-size:contain;
+                }
+                img{
+                    width: 187.5px;
+                    height: 250px;                    
+                }
             }
         }
     }
@@ -112,6 +118,7 @@
         top:0;
         bottom:0;
         display:none;
+        z-index:1;
         .jk-detailsSelectMain{
             background:#fff;
             height: 832px;
@@ -215,5 +222,21 @@
             }
         }
     }
-    
+    .jk-detailsTips{
+        width: 3.333333rem;
+        height: 1.6rem;
+        background: rgba(000, 000, 000, 0.7);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-80%);
+        line-height: .533333rem;
+        font-size: .346667rem;
+        color: #fff;
+        padding: .28rem .4rem 0;
+        display:none;
+        text-align:center;
+        line-height: 1.0rem;
+        z-index: 1111111;
+    }
 }

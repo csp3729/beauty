@@ -3,7 +3,8 @@ import {Link} from 'react-router';
 import http from 'superagent';
 import './details.scss';
 import $ from '../../jquery-3.2.1.js';
-
+import '../home/banner/swiper/swiper-4.2.0.min.scss';
+import Swiper from '../home/banner/swiper/swiper-4.2.0.min.js'
 class Details extends React.Component{
     state = {
         data: [],
@@ -14,7 +15,9 @@ class Details extends React.Component{
         tips: '请选择',
         colorActive: '',
         sizeActive: '',
-        username: 'jk'
+        username: 'jk',
+        modl:'',
+        
     }
     popupAppear(e){
         let $popup = $('.jk-detailsSelect')
@@ -51,8 +54,34 @@ class Details extends React.Component{
                 data: goods,
                 allImg: url2
             })
-            
+            var swiper = new Swiper('.jk-detailsMainImg', {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                // autoplay: {
+                //     delay: 2500,
+                //     disableOnInteraction: false,
+                // },
+            })
+            var swiper = new Swiper('.jk-detailsMainGuideImg', {
+                slidesPerView: 4,
+                slidesPerColumn: 2,
+                spaceBetween: 70,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 1500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+
         })
+        
     }
     colorChose(e){
         // let $colorTable = $('.jk-detailsSelectMainColor')
@@ -63,33 +92,40 @@ class Details extends React.Component{
         //     })
         // })
         if(e.target.innerText == '海牙白'){
+            console.log(e.target.parentNode.nextSibling.children)
+
             this.setState({
                 colorActive: 'span1',
                 tips: '已选择',
                 color: e.target.innerText,
-                size: '请选择尺码'
-            })
+                size: '请选择尺码',
+                sizeActive: ''
+            });
+            // e.target.parentNode.nextSibling.children[1].classList.remove('sizeFocus')
+            
         }else if(e.target.innerText == '深海蓝'){
             this.setState({
                 colorActive: 'span2',
                 tips: '已选择',
                 color: e.target.innerText,
-                size: '请选择尺码'
-
+                size: '请选择尺码',
+                sizeActive: ''
             })
         }else if(e.target.innerText == '天然粉'){
             this.setState({
                 colorActive: 'span3',
                 tips: '已选择',
                 color: e.target.innerText,
-                size: '请选择尺码'
+                size: '请选择尺码',
+                sizeActive: ''
             })
         }else if(e.target.innerText == '奶粉绿'){
             this.setState({
                 colorActive: 'span4',
                 tips: '已选择',
                 color: e.target.innerText,
-                size: '请选择尺码'
+                size: '请选择尺码',
+                sizeActive: ''
             })
         }
         
@@ -146,36 +182,48 @@ class Details extends React.Component{
         location.href = "#/classify"
     }
     addCar(){
-        // collection:30
-        // goodsname:"韩版学院风高腰宽松烂九分牛仔裤女学生bf风百搭破洞毛边直筒哈伦裤潮"
-        // path:"src/img/pants2a.jpg,src/img/pants2b.jpg"
-        // prices:69
-        // sales:250
-        // qty
-        // color
-        // size
-        // username
+        let warn;
         let _username = this.state.username;
         let _path = $('.jk-detailsSelectMainGood').find('img').attr('src');
         let _collection = parseInt($('.jk-MainGoodDesribes').find('span').eq(2).text().replace(/[^0-9]/ig,""));
         let _price =$('.jk-MainGoodDesribes').find('span').eq(1).text().replace(/[^0-9]/ig,"")/100;
-        // let _price = this.state.data[0].prices
         let _goodsname = $('.jk-MainGoodDesribes').find('span').eq(0).text();
         let _qty = this.state.count;
         let _color = $('.jk-detailsSelectMainColor').find('span').filter('.colorFocus').text();
         if($('.jk-detailsSelectMainColor').find('span').filter('.colorFocus').text() == ''){
-            alert('请选择颜色');
+            warn = '请选择颜色';
+                this.setState({
+                    spmodl: 'block',
+                    status: warn
+                })
+                setTimeout(function(){
+                    this.setState({
+                        spmodl: 'none',
+                        status: ''
+                    })
+                }.bind(this),2000)
+
             return
         }
         let _size = $('.jk-detailsSelectMainSize').find('span').filter('.sizeFocus').text();
         if($('.jk-detailsSelectMainSize').find('span').filter('.sizeFocus').text() == ''){
-            alert('请选择尺码');
+                warn = '请选择尺码';
+                this.setState({
+                    spmodl: 'block',
+                    status: warn
+                })
+                setTimeout(function(){
+                    this.setState({
+                        spmodl: 'none',
+                        status: ''
+                    })
+                }.bind(this),2000)
             return
         }
-        console.log(_size)
-        http.post('http://10.3.133.75:88/addToCar').set({
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }).send({
+        
+        http.post('http://10.3.133.75:88/addToCar')
+        .set({'Content-Type': 'application/x-www-form-urlencoded'})
+        .send({
             collection: _collection,
             goodsname: _goodsname,
             path: _path,
@@ -186,6 +234,19 @@ class Details extends React.Component{
             username: _username
         }).end((req, res) => {
             console.log(res.body.status)
+            if(res.body.status){
+                warn = '添加成功';
+                this.setState({
+                    spmodl: 'block',
+                    status: warn
+                })
+                setTimeout(function(){
+                    this.setState({
+                        spmodl: 'none',
+                        status: ''
+                    })
+                }.bind(this),2000)
+            }
         })
     }
     render(){
@@ -206,9 +267,11 @@ class Details extends React.Component{
                             // console.log(item)
                             return(
                                 <div className='jk-detailsMain' key={item.id}>
-                                    <div className='jk-detailsMainImg'>
-                                        <img src={url1} key={url1}/>
-                                        <img src={url2} key={url2}/>
+                                    <div className='jk-detailsMainImg swiper-container'>
+                                        <div className="swiper-wrapper">    
+                                            <div className="swiper-slide"><img src={url1} key={url1}/></div>
+                                            <div className="swiper-slide"><img src={url2} key={url2}/></div>
+                                        </div>
                                     </div>
 
                                     <p className='jk-detailsMainGoodName'>{item.goodsname}</p>
@@ -234,14 +297,19 @@ class Details extends React.Component{
                                     </div>
                                     <div className="jk-detailsMainGuide">
                                         <h4>为你推荐</h4>
-                                        <div className="jk-detailsMainGuideImg">
+                                        <div className="jk-detailsMainGuideImg swiper-container">
+                                            <div className="swiper-wrapper">
                                             {
                                                 this.state.allImg.map((item, index) => {
                                                     return(
-                                                        <img src={item} key={index}/> 
+                                                        <div className="swiper-slide" key={index}>
+                                                            <img src={item} key={item}/>
+                                                        </div> 
                                                     )
                                                 })
                                             }
+                                            </div>   
+                                            <div className="swiper-pagination"></div>  
                                         </div>
                                     </div>
                                 </div>
@@ -305,6 +373,7 @@ class Details extends React.Component{
                             </div>
                         </div>
                     </div>
+                     <div className="jk-detailsTips" style={{display:this.state.spmodl}}>{this.state.status}</div>
                 </div>
         )
     }
