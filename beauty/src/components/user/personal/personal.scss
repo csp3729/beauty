@@ -1,0 +1,177 @@
+.personal{
+    background-color: #F3F6F9;
+    position: relative;
+    h3{
+        padding-top :.533333rem;
+        line-height: 1.173333rem;
+        font-size: .4rem;
+        text-align: center;
+        background-color: #fff;
+        // font-weight: normal;
+        margin-bottom: .533333rem;
+    }
+    .return{
+        position: absolute;
+        top: .853333rem;
+        left: .466667rem;
+        .fa-chevron-left{
+            font-size: .56rem;
+            color: #333333;
+        }
+    }
+    >span{
+        position: absolute;
+        top: .933333rem;
+        right: .466667rem;
+        font-size: .32rem;
+    }
+    // i{
+    //     font-size: .56rem;
+    //     color: #333333;
+    // }
+    >ul{
+        background-color: #fff;
+        padding-left:  .466667rem;
+        margin-bottom: .533333rem;
+        li a{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 .266667rem;
+            border-bottom: 1px solid #ccc;
+            line-height: 1.066667rem;
+            font-size: .32rem;
+            color: #000;
+            div:nth-child(2){
+                color: #888;
+                img{
+                    display: inline-block;
+                    // width: .666667rem;
+                    // height: 50px;
+                    width: .8rem;
+                    height: .8rem;
+                    margin-right: .266667rem;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                }
+                span{
+                    padding-right: .266667rem;
+                }
+                .birthday{
+                    color: #fc0;
+                }
+            }
+        }
+    }
+    >input{
+        border: 0 none;
+        background-color: #fff;
+        color: #fc0;
+        line-height: 1.066667rem;
+        font-size: .32rem;
+    }
+
+    .amend{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(222,222,222,0.5);
+        ul{
+            width: 100%;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            li{
+                padding: 0 .266667rem;
+                border-bottom: 1px solid #ccc;
+                line-height: 1.066667rem;
+                font-size: .32rem;
+                color: #000;
+                background-color: #fff;
+                span{
+                    margin-right: .266667rem
+                }
+                input{
+                    width: 80%;
+                    line-height: 1.013333rem;
+                    font-size: .32rem;
+                    border: 0 none;
+                }
+            }
+            #save{
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+    }
+
+    .amendSex{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(222, 222, 222, 0.5);
+        ul{
+            position: absolute;
+            width: 9.466667rem;
+            margin: .266667rem;
+            // bottom: -30%;
+            li{
+                line-height: 1.333333rem;
+                font-size: 34px;
+                color: blue;
+                text-align: center;
+                background-color: #fff;
+                // border-radius: .333333rem;
+            }
+            li:nth-child(1){
+                border-radius: .333333rem .333333rem 0 0 / .333333rem .333333rem 0 0;
+            }
+            li:nth-child(2){
+                margin-bottom: .266667rem;
+                border-top: 1px solid #ccc;
+                border-radius: 0 0 .333333rem .333333rem / 0 0 .333333rem .333333rem;
+            }
+            li:nth-child(3){
+                border-radius: .333333rem;
+            }
+        }
+    }
+    .spmodl{
+        width: 3.333333rem;
+        height: 1.6rem;
+        background: rgba(000, 000, 000, 0.7);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-80%);
+        line-height: .533333rem;
+        font-size: .346667rem;
+        text-align: center;
+        color: #fff;
+        padding: .28rem .4rem 0;
+        display:none;
+    }
+}
+
+@keyframes show{
+    from{bottom: -30%}
+    to{bottom: 0}
+}
+
+.show{
+    animation: show 0.2s;
+    bottom:0;
+}
+
+
+@keyframes hide{
+    from{bottom: 0}
+    to{bottom: -30%}
+}
+
+.hide{
+    animation: hide 0.2s;
+    bottom: -30%;
+}

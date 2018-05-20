@@ -1,0 +1,67 @@
+.perExplain{
+    background-color: #F3F6F9;
+    position: relative;
+    h3{
+        padding-top :.533333rem;
+        line-height: 1.173333rem;
+        font-size: .4rem;
+        text-align: center;
+        background-color: #fff;
+        // font-weight: normal;
+        margin-bottom: .533333rem;
+    }
+    .return{
+        position: absolute;
+        top: .853333rem;
+        left: .466667rem;
+        .fa-chevron-left{
+            font-size: .56rem;
+            color: #333333;
+        }
+    }
+    >span{
+        position: absolute;
+        top: .933333rem;
+        right: .466667rem;
+        font-size: .32rem;
+    }
+    #nick{
+        line-height: 1.066667rem;
+        font-size: .4rem;
+        color: #000;
+        padding-left: .4rem;
+        background-color: #fff;
+        border: 0 none;
+    }
+    textarea{
+        height: 200px;
+        line-height: 18px;
+        font-size: 16px;
+        color: #000;
+        padding: 15px .4rem;
+        background-color: #fff;
+        border: 0 none;
+        outline: none;
+    }
+    p{
+        padding: .266667rem .4rem;
+        font-size: .346667rem;
+        line-height: .533333rem;
+        color: #ccc
+    }
+    .spmodl{
+        width: 3.333333rem;
+        height: 1.6rem;
+        background: rgba(000, 000, 000, 0.7);
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%,-80%);
+        line-height: .533333rem;
+        font-size: .346667rem;
+        text-align: center;
+        color: #fff;
+        padding: .28rem .4rem 0;
+        display:none;
+    }
+}

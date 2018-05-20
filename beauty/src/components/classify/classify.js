@@ -65,8 +65,6 @@ class Classify extends React.Component{
                 // console.log(this.state.data)
             })
         }
-       
-        
     }
     defaultSort(e){
         e.target.classList.add('tabfoucus')
@@ -174,7 +172,6 @@ class Classify extends React.Component{
                         <span className='price' onClick={this.priceSort.bind(this)}>价格</span>
                     </div>
                     <div className='jk-goodslist'>
-                        
                         {
                             this.state.data.map((item,index) => {
                                 // console.log(item.path)
@@ -182,36 +179,27 @@ class Classify extends React.Component{
                                 let arr = path.split(',');
                                 let id = item.id;
                                 return(
-                                    
                                     <Link to='' key={id} data-id={id} onClick={this.transmission.bind(this)}>
-                                    
-                                    <div className='jk-goods' key={arr[1]}>
-                                        
+                                        <div className='jk-goods' key={arr[1]}>
                                             <img src={arr[0]} key={arr[0]}/>
-                                        
-                                        <p className='goodsname' key={item.goodsname}>{item.goodsname}</p>
-                                        <div className='details' key={item.index}>
-                                            <p className='price' key={item.prices}>￥{item.prices}</p>
-                                            <p className='sold' key={item.sales}>{item.sales}
+                                            <p className='goodsname' key={item.goodsname}>{item.goodsname}</p>
+                                            <div className='details' key={item.index}>
+                                                <p className='price' key={item.prices}>￥{item.prices}</p>
+                                                <p className='sold' key={item.sales}>{item.sales}
                                                 <i className="fas fa-star"></i>
-                                            </p>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-
                                     </Link>
-                                    
                                 )
                             })
                         }
-                        
                     </div>
                 </div>
-                <Menus />
-                
+                <Menus test="classify"/>
             </div>
         )
     }
-    
 }
 
 export default Classify;
