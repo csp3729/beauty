@@ -30,7 +30,7 @@ class User extends React.Component{
                     </div>
                     <div className="user-tow">
                         <div className="portrait">
-                            <Link to="/personal"><img src=""/></Link>
+                            <Link to="/personal"><img src="src/img/bag1a.jpg"/></Link>
                         </div>
                         <div className="tow-user">
                             <p className="username">{this.state.data.nickname}</p>

@@ -29,9 +29,29 @@ var c2 = {
     color:'#F60',
     lineHeight:'200px'
 }
+var c3 = {
+    lineHeight:'40px',
+    fontSize:28,
+    color:'#f60',
+    textAlign:'center'
+
+}
+var c4 = {
+    display:'block',
+    width:100,
+    height:60,
+    background:'#FF6699',
+    color:'#fff',
+    borderRadius:8,
+    fontSize:30,
+    lineHeight:'60px',
+    margin:'0 auto',
+    textAlign:'center',
+    marginTop:10
+}
+
 
 class Cart extends React.Component{
-    
     state = {
         data: [],
         // status:false
@@ -40,7 +60,9 @@ class Cart extends React.Component{
         status: '编辑',
         carlist:[],
         total:0,
-        total_qty:0
+        total_qty:0,
+        display: {},
+        username:window.localStorage.getItem('username')
     }
     
      status(){
@@ -147,20 +169,39 @@ class Cart extends React.Component{
     }
 
     componentDidMount(){
-        // console.log(http)
-        http.get('http://10.3.133.75:88/getCars').end((error, res) => {
-        var arr = JSON.parse(res.text)
+        let username = window.localStorage.getItem('username')
+        if(username == null){
+            this.setState({
+                display: {display: 'block'}
+            })
+        } else {
+            this.setState({
+                display: {display: 'none'}
+            })
+        }
         
-            if(arr.data.length > 0){
-                this.refs.noGoods.style.display = 'none'; 
+        http.post('http://10.3.133.75:88/getCars')
+        .set({'Content-Type': 'application/x-www-form-urlencoded','auth':window.localStorage.getItem('token')})
+        .send({username:this.state.username}).end((error, res) => {
+            if(!res.body.status){
                 this.setState({
-                    data:arr.data
+                    data:[]
                 })
             }else{
-                this.refs.hasGoods.style.display = 'none';
-                this.setState({
-                    data:arr.data
-                })
+
+                var arr = JSON.parse(res.text)
+            
+                if(arr.data.length > 0){
+                    this.refs.noGoods.style.display = 'none'; 
+                    this.setState({
+                        data:arr.data
+                    })
+                }else{
+                    this.refs.hasGoods.style.display = 'none';
+                    this.setState({
+                        data:arr.data
+                    })
+                }
             }
         })
     } 
@@ -348,8 +389,10 @@ class Cart extends React.Component{
                         </ul>
                     </div>
                     <div ref = "noGoods">
-                        {/* <div className = "pic"></div> */}
-                        {/* <img src="http://10.3.133.75:88/"/> */}
+                        <div style={this.state.display}>
+                            <p style={c3}>温馨提示，现在登录，您可以查看您的购物车</p>
+                            <Link to="login" style={c4}>登录</Link>
+                        </div>
                         <div className="none" style={c2}>购物车空空如也</div>
                         <div className="home"><Link to="/" id="a" style= {c1}>随便逛逛</Link></div>
                     </div>

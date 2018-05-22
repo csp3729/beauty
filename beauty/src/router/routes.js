@@ -15,6 +15,7 @@ import PerExplain from '../components/user/personal/set/perExplain';
 import Site from '../components/user/personal/set/site';
 import Details from '../components/details/details';
 import Search from '../components/home/search/search';
+import AddSite from '../components/user/personal/set/addSite';
 import{All, Payment, Take, Estimate, Salesreturn} from '../components/user/order/allorder/allorder'
 
 import './base.css';
@@ -42,12 +43,13 @@ const routes = (
         <Route path="/" component={Home} />
         <Route path="/classify" component={Classify}></Route>
         <Route path="/cart" component={Cart} />
-        <Route path="/user" component={User} />
+        <Route path="/user" component={User} onEnter={isLogin}/>
         <Route path="/personal" component={Personal}/>
         <Route path="/nickname" component={Nicknam}/>
         <Route path="/birthday" component={Birthday}/>
         <Route path="/perExplain" component={PerExplain}/>
         <Route path="/site" component={Site}/>
+        <Route path="/addsite" component={AddSite} />
         <Route path="/reg" component={Reg} />
         <Route path="/login" component={Login} />
         <Route path="/order" component={Order}>
@@ -60,7 +62,6 @@ const routes = (
         <Route path="/search" component={Search} />
         <Route path='/details(/:orderid)' component={Details} />
         <Route path="/search" component={Search} />
-
     </Route>
 )
 

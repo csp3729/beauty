@@ -3,80 +3,83 @@
     flex-direction:column;
     position:relative;
     .jk-detailsHead{
-        padding:30px;
-        height: 100px;
+        padding:.4rem;
+        height: 1.333333rem;
         display:flex;
         justify-content: space-between;
-        font-size: 42px;
+        font-size: .56rem;
         color:#9A999A;
         div{
-            i:nth-child(1){margin-right:60px;}
+            a{
+                color: #9A999A;
+                i{ margin-left: .8rem; }
+            }
         }
     }
     .jk-detailsMain{
         flex:1;
         overflow-x: hidden;
         .jk-detailsMainImg{
-            padding-left:30px;
+            padding-left:.4rem;
             .swiper-slide:nth-child(1) {width: 80%;}
             .swiper-slide:nth-child(2n) {width: 90%;}
             img{
-                height: 868px;
-                width: 580px;
+                height: 11.573333rem;
+                width: 7.733333rem;
             }
         }
         .jk-detailsMainGoodName{
-            padding:38px 0 0 30px;
-            font-size: 32px;
-            line-height: 44px;
+            padding:.506667rem 0 0 .4rem;
+            font-size: .426667rem;
+            line-height: .586667rem;
             color:#343434;
         }
         .jk-detailsMainPrice{
-            span{margin-left:25px;}
+            span{margin-left:.333333rem;}
             span:nth-child(1){
-                font-size: 50px;
+                font-size: .666667rem;
                 color:#EE7099;
             }
             span:nth-child(2){
-                font-size: 30px;
+                font-size: .4rem;
                 color:#9A999A;
             }
             span:nth-child(3){
-                padding:5px;
-                font-size: 25px;
+                padding:.066667rem;
+                font-size: .333333rem;
                 background:#D22D4B;
-                border-radius:10px;
+                border-radius:.133333rem;
                 color:#fff;
             }
         }
         .jk-detailsMainDescribe{
-            padding: 0 25px;
+            padding: 0 .333333rem;
             display:flex;
             justify-content:space-between;
-            font-size:25px;
+            font-size:.333333rem;
             color:#838382;
-            line-height: 40px;
-            border-bottom: 1px solid #ccc;
+            line-height: .533333rem;
+            border-bottom: .013333rem solid #ccc;
         }
         .jk-detailsMainPost{
-            font-size: 28px;
+            font-size: .373333rem;
             display:flex;
             justify-content:space-around;
             color:#333333;
-            line-height: 58px;
-            border-bottom: 5px solid #ccc;
+            line-height: .773333rem;
+            border-bottom: .066667rem solid #ccc;
         }
         .jk-detailsMainEvaluate{
-            padding: 0 25px;
-            font-size: 30px;
+            padding: 0 .333333rem;
+            font-size: .4rem;
             display:flex;
             justify-content:space-between;
         }
         .jk-detailsMainGuide{
-            border-top:10px solid #ccc;
-            font-size: 25px;
-            line-height: 40px;
-            padding-left:25px;
+            border-top:.133333rem solid #ccc;
+            font-size: .333333rem;
+            line-height: .533333rem;
+            padding-left:.333333rem;
             .jk-detailsMainGuideImg{
                 height: auto;
                 margin-left: auto;
@@ -85,27 +88,27 @@
                     background-size:contain;
                 }
                 img{
-                    width: 187.5px;
-                    height: 250px;                    
+                    width: 2.5rem;
+                    height: 3.333333rem;                    
                 }
             }
         }
     }
     .jk-detailsMenus{
-        font-size: 30px;
+        font-size: .4rem;
         display:flex;
         justify-content:space-between;
-        height: 100px;
-        line-height: 50px;
+        height: 1.333333rem;
+        line-height: .666667rem;
         align-items:center;
         text-align:center;
         span{
             flex:1;
         }
-        span:nth-child(4){background:#fc0;flex:3;line-height: 100px;color:#fff;}
-        span:nth-child(5){background:#EE7099;flex:2;line-height: 100px;color:#fff;}
+        span:nth-child(4){background:#fc0;flex:3;line-height: 1.333333rem;color:#fff;}
+        span:nth-child(5){background:#EE7099;flex:2;line-height: 1.333333rem;color:#fff;}
         i{
-            font-size: 40px;
+            font-size: .533333rem;
             color:#EF819B;
             display:block;
         }
@@ -121,102 +124,102 @@
         z-index:1;
         .jk-detailsSelectMain{
             background:#fff;
-            height: 832px;
+            height: 11.093333rem;
             width: 100%;
             position:absolute;
             bottom:0;
             display:none;
             .jk-detailsSelectMaincontainer{
-                padding:25px;
+                padding:.333333rem;
                 display:flex;
                 flex-direction:column;
                 justify-content:space-between;
-                height: 830px;
+                height: 11.066667rem;
                 .jk-detailsSelectMainGood{
                     display:flex;
                     justify-content:space-around;
-                    height: 190px;
-                    padding-bottom:10px;
-                    border-bottom: 2px solid #ccc;
+                    height: 2.533333rem;
+                    padding-bottom:.133333rem;
+                    border-bottom: .026667rem solid #ccc;
                     img{
                         
-                        width: 165px;
-                        height: 165px;
-                        padding: 5px;
-                        border: 1px solid #ccc;
+                        width: 2.2rem;
+                        height: 2.2rem;
+                        padding: .066667rem;
+                        border: .013333rem solid #ccc;
                     }
                     .jk-MainGoodDesribes{
-                        padding:0 20px;
+                        padding:0 .266667rem;
                         span:nth-child(1){
-                            font-size: 32px; 
-                            line-height: 40px;
+                            font-size: .426667rem; 
+                            line-height: .533333rem;
                             display:block;
-                            width:418px;
+                            width:5.573333rem;
                             overflow:hidden; 
                             text-overflow:ellipsis;
                             display: -webkit-box;
                             -webkit-box-orient:vertical;
                             -webkit-line-clamp:2;
                         }
-                        span:nth-child(3){font-size: 32px; line-height: 32px; color:#EE7099;}
-                        span:nth-child(4){font-size: 24px; color:#A2A1A2;}
-                        span:nth-child(6){font-size: 28px; line-height: 40px; color:#9A999A;}
+                        span:nth-child(3){font-size: .426667rem; line-height: .426667rem; color:#EE7099;}
+                        span:nth-child(4){font-size: .32rem; color:#A2A1A2;}
+                        span:nth-child(6){font-size: .373333rem; line-height: .533333rem; color:#9A999A;}
                     }
                     .jk-detailsSelectClose{
-                        width:60px;
-                        font-size: 60px;
+                        width:.8rem;
+                        font-size: .8rem;
                         display:block;
-                        height: 190px;
+                        height: 2.533333rem;
                         vertical-align:top;
                     }
                     
                 }
                 .jk-detailsSelectMainColor{
-                    font-size: 30px;
-                    h4{margin-bottom:20px;}    
+                    font-size: .4rem;
+                    h4{margin-bottom:.266667rem;}    
                     .colorFocus{background:#EE7099;color:#fff;}
                     span{
-                        margin:20px 35px 10px 0;
-                        padding:10px;
+                        margin:.266667rem .466667rem .133333rem 0;
+                        padding:.133333rem;
                         background:#FaFaFa;
                         
                     }
                 }
                 .jk-detailsSelectMainSize{
-                    font-size: 30px;
-                    h4{margin-bottom:20px;}    
+                    font-size: .4rem;
+                    h4{margin-bottom:.266667rem;}    
                     .sizeFocus{background:#EE7099;color:#fff;}
                     span{
-                        margin:20px 35px 10px 0;
-                        padding:10px;
+                        margin:.266667rem .466667rem .133333rem 0;
+                        padding:.133333rem;
                         background:#FaFaFa;
                         
                     }
                 }
                 .jk-detailsSelectMainQty{  
-                    font-size: 30px; 
-                    h4{margin-bottom:20px;}                
+                    font-size: .4rem; 
+                    h4{margin-bottom:.266667rem;}                
                     span{
                         float: left;
-                        font-size: 36px;
+                        font-size: .48rem;
                         color:#CDCDCD;
-                        border:1px solid #ccc;
+                        border:.013333rem solid #ccc;
                     }
                     input{
-                        width: 50px;
-                        height: 50px;
-                        font-size: 30px;
-                        border:1px solid #ccc;
+                        width: .666667rem;
+                        height: .666667rem;
+                        font-size: .4rem;
+                        border:.013333rem solid #ccc;
                         float: left;
                         text-align:center;
                     }
                 }
                 .jk-detailsSelectMainComfirm{
-                    font-size: 30px;
+                    font-size: .4rem;
                     text-align:center;
-                    margin:18px 210px;
+                    margin:.24rem 2.8rem;
                     background:#EE7099;
-                    line-height: 60px;
+                    line-height: .8rem;
                     color:#fff;
                 }
             }

@@ -25,41 +25,46 @@
         right: .466667rem;
         font-size: .32rem;
     }
-    #nick{
+    label{
+        background-color: #fff;
+        font-size: .4rem;
+        line-height: 1.066667rem;
+        padding-left: .4rem;
+        input{
+            line-height: 1.066667rem;
+            font-size: .4rem;
+            color: #000;
+            padding-left: .4rem;
+            border: 0 none;
+        }
+    }
+    .area{
         line-height: 1.066667rem;
         font-size: .4rem;
         color: #000;
-        padding-left: .4rem;
+        padding: 0 0 0 .8rem;
         background-color: #fff;
-        border: 0 none;
     }
-    textarea{
-        height: 200px;
-        line-height: 18px;
-        font-size: 16px;
-        color: #000;
-        padding: 15px .4rem;
-        background-color: #fff;
-        border: 0 none;
-        outline: none;
+
+    .amendSite{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(222, 222, 222, 0.5);
     }
-    >p{
-        padding: .266667rem .4rem;
-        font-size: .346667rem;
-        line-height: .533333rem;
-        color: #ccc
-    }
+
     .spmodl{
         width: 3.333333rem;
         height: 1.6rem;
         background: rgba(000, 000, 000, 0.7);
         position: absolute;
         left: 50%;
-        top: 25%;
+        top: 50%;
         transform: translate(-50%,-80%);
         line-height: .533333rem;
         font-size: .346667rem;
-        text-align: center;
         color: #fff;
         padding: .28rem .4rem 0;
         display:none;

@@ -53,7 +53,7 @@ class Search extends React.Component{
                 <div className="search">
                     <div className="search_box">
                         <i className="fas fa-search"></i>
-                        <input type="text" placeholder='搜宝贝' value={this.state.search_val} onChange={this.keyChange}/>
+                        <input type="text" placeholder='搜宝贝' value={this.state.search_val} onChange={this.keyChange.bind(this)}/>
                         <i className="fas fa-expand"></i>
                     </div>
                     <span onClick={this.getGoods.bind(this)}>搜索</span>

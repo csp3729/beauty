@@ -142,7 +142,8 @@ class Login extends React.Component{
                 <ul className="img-list">
                    {list}
                 </ul> */}
-                <input type="button" value="登录" id="next" className={`next ${this.state.active ? 'active' : null}`} onClick={this.login.bind(this)}/>
+                {/* <input type="button" value="登录" id="next" className={`next ${this.state.active ? 'active' : null}`} onClick={this.login.bind(this)}/> */}
+                <div className={`next ${this.state.active ? 'active' : null}`} onClick={this.login.bind(this)}>登录</div>
                 <div className="select">
                     <span>海外手机</span>
                     <span>免密登录</span>

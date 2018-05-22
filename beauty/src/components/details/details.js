@@ -15,7 +15,7 @@ class Details extends React.Component{
         tips: '请选择',
         colorActive: '',
         sizeActive: '',
-        username: 'jk',
+        username: window.localStorage.getItem('username'),
         modl:'',
         
     }
@@ -84,13 +84,6 @@ class Details extends React.Component{
         
     }
     colorChose(e){
-        // let $colorTable = $('.jk-detailsSelectMainColor')
-        // $colorTable.on('click', 'span' ,function(){
-        //     $(this).addClass('colorFocus').siblings('span').removeClass('colorFocus');
-        //     this.setState({
-        //         tips: '已经选择'+$(this).text()
-        //     })
-        // })
         if(e.target.innerText == '海牙白'){
             console.log(e.target.parentNode.nextSibling.children)
 
@@ -163,10 +156,6 @@ class Details extends React.Component{
         })
     }
     qtyDecrement(e){
-        console.log(e.target)
-        // e.target.onmouseup = function(){
-        //     this.style.background = '#EE7099'
-        // }
         if(this.state.count > 1){
             this.setState({
                 count: this.state.count - 1
@@ -222,7 +211,7 @@ class Details extends React.Component{
         }
         
         http.post('http://10.3.133.75:88/addToCar')
-        .set({'Content-Type': 'application/x-www-form-urlencoded'})
+        .set({'Content-Type': 'application/x-www-form-urlencoded','auth':window.localStorage.getItem('token')})
         .send({
             collection: _collection,
             goodsname: _goodsname,
@@ -231,7 +220,7 @@ class Details extends React.Component{
             qty: _qty,
             color: _color,  
             size: _size,
-            username: _username
+            username: this.state.username
         }).end((req, res) => {
             console.log(res.body.status)
             if(res.body.status){
@@ -246,6 +235,8 @@ class Details extends React.Component{
                         status: ''
                     })
                 }.bind(this),2000)
+            } else {
+                this.props.router.push('login')
             }
         })
     }
@@ -257,7 +248,8 @@ class Details extends React.Component{
                         <i className="fas fa-undo-alt" onClick={this.getBack}></i>
                         <div>
                             <i className="fas fa-share-alt"></i>
-                            <i className="fa fa-shopping-cart"></i>
+                            {/* <i className="fa fa-shopping-cart"></i> */}
+                            <Link to="cart"><i className="fa fa-shopping-cart"></i></Link>
                         </div>
                     </div>
                     {

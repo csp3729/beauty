@@ -53,10 +53,6 @@ class Personal extends React.Component{
         })
     }
 
-    amend(){
-        console.log('敲尼玛，真多东西写')
-    }
-
     amendSex(){
         this.setState({
             amendSex: {display: 'block'},
@@ -130,8 +126,6 @@ class Personal extends React.Component{
     }
 
     out(){
-        console.log('已return，避免误操作');
-        return
         window.localStorage.removeItem('token');
         window.localStorage.removeItem('username');
         this.props.router.push('/')
@@ -142,7 +136,6 @@ class Personal extends React.Component{
             <div className="personal">
                 <h3>个人信息</h3>
                 <Link className="return" to="/user"><i className="fas fa-chevron-left"></i></Link>
-                {/* <span onClick={this.amend.bind(this)}>编辑</span> */}
                 <ul>
                     <li>
                         <Link to="">
@@ -182,7 +175,7 @@ class Personal extends React.Component{
                             </div>
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/birthday">
                             <div>生日设置</div>
                             <div>
@@ -190,7 +183,7 @@ class Personal extends React.Component{
                                 <i className="fas fa-angle-right"></i>
                             </div>
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link onClick={this.amendSite.bind(this)}>
                             <div>收货地址</div>
@@ -208,7 +201,7 @@ class Personal extends React.Component{
                         </Link>
                     </li> */}
                 </ul>
-                <input type="button" value="退出当前账号" onClick={this.out.bind(this)}/>
+                <div className="out" onClick={this.out.bind(this)}>退出当前账号</div>
                 <div className="amendSex" style={this.state.amendSex}>
                     <ul onClick={this.saveSex.bind(this)} className={this.state.sex == 'show' ? 'show' : 'hide'}>
                         <li>女</li>
@@ -217,32 +210,6 @@ class Personal extends React.Component{
                     </ul>
                 </div>
                 <div className="spmodl" style={{display:this.state.modl}}>{this.state.status}</div>
-                {/* <div className="amend">
-                    <ul>
-                        <li>
-                            <span>头像：</span><input type="text"/>
-                        </li>
-                        <li>
-                            <span>昵称：</span><input type="text" value={this.state.data.nickname}/>
-                        </li>
-                        <li>
-                            <span>性别：</span>
-                            <input type="text" value={this.state.data.sex}/>
-                        </li>
-                        <li>
-                            <span>个人说明：</span><input type="text"/>
-                        </li>
-                        <li>
-                            <span>生日：</span><input type="text"/>
-                        </li>
-                        <li>
-                            <span>收货地址：</span><input type="text"/>
-                        </li>
-                        <li id="save">
-                            <span onClick={this.amend.bind(this)}>保存</span>
-                        </li>
-                    </ul>
-                </div> */}
             </div>
         )
     }

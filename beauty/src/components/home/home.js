@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 import Menus from '../menus/menus';
 import Banner from './banner/banner';
 import Popular from './popular/popular';
-import Goods from './goods/goods';
+import Goods from '../home/goods/goods';
 
 import './home.scss';
 

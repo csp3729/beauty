@@ -2,40 +2,40 @@
     position:relative;
     .search{
         width: 100%;
-        height: 60px;
+        height: .8rem;
         position:absolute;
         left:0;
-        top:53px;
+        top:.706667rem;
         z-index:800;
         .search_box{
-            width: 610px;
-            height: 61px;
-            margin-left: 36px;
+            width: 8.133333rem;
+            height: .813333rem;
+            margin-left: .48rem;
             background: #F3F6F9;
-            border-radius:15px;
+            border-radius:.2rem;
             float: left;
             i.fas{
                 display:inline-block;
-                font-size:30px;
+                font-size:.4rem;
                 color:#ccc;
-                margin-top:14px;
-                padding-left:25px;
+                margin-top:.186667rem;
+                padding-left:.333333rem;
             }
             input{
-                font-size:30px;
-                width: 490px;
-                height: 48px;
+                font-size:.4rem;
+                width: 6.533333rem;
+                height: .64rem;
                 border:0 none;
-                padding-left:23px;
+                padding-left:.306667rem;
                 background: #F3F6F9;
             }
         }
         i.fa-envelope{
             display:inline-block;
-            font-size:40px;
+            font-size:.533333rem;
             color:#fff;
-            margin-top:8px;
-            padding-left:25px;
+            margin-top:.106667rem;
+            padding-left:.333333rem;
         }
     }
     .search_fixed{
@@ -49,15 +49,15 @@
     }
     .module{
         width: 100%;
-        height: 80px;
+        height: 1.066667rem;
         background: #fff;
-        font-size:24px;
+        font-size:.32rem;
         color:#DAD9DA;
         li{
             float: left;
-            padding: 28px 30px 28px 20px;
+            padding: .373333rem .4rem .373333rem .266667rem;
             i.fas{
-                margin-right: 10px;
+                margin-right: .133333rem;
                 color:#D0E8BE;
             }
             i.fa-database{
@@ -73,23 +73,23 @@
     }
     .geli{
         width: 100%;
-        height: 10px;
+        height: .133333rem;
         background: #F3F6F9;
     }
     .silde_box{
         width: 100%;
-        height: 270px;
+        height: 3.6rem;
         li{
-            width: 186px;
+            width: 2.48rem;
             float: left;
             text-align:center;
-            font-size:24px;
+            font-size:.32rem;
             color:#333;
             img{
                 display:block;
-                width: 140px;
-                height: 140px;
-                margin:48px 24px 28px;
+                width: 1.866667rem;
+                height: 1.866667rem;
+                margin:.64rem .32rem .373333rem;
             }
         }
     }

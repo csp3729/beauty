@@ -29,7 +29,7 @@ class Registration extends React.Component{
             var password = this.refs.password.value;
             var code = this.refs.code.value;
             if(!(code == this.state.code)){
-                warn = '短信检验失败，请重试';
+                warn = '短信检验失败...请重试';
                 this.setState({
                     modl: 'block',
                     status: warn
@@ -43,12 +43,12 @@ class Registration extends React.Component{
                 return
             } else {
                 http.post('register', {username, password}).then((res) => {
+                    console.log(username, password)
                     if(res.body.status){
                         http.post('login',  {username, password}).then((res) => {
                             if(res.body.status){
                                 window.localStorage.setItem('token', res.body.data);
-                                let message = JSON.stringify(res.body.message)
-                                window.localStorage.setItem('message', message);
+                                window.localStorage.setItem('username', username);
                                 this.props.router.push('user')
                             }
                         })
@@ -144,7 +144,8 @@ class Registration extends React.Component{
                         <span onClick={this.code.bind(this)}>获取验证码</span>
                     </li>
                 </ul>
-                <input type="button" value="注册" id="next" className={`next ${this.state.active ? 'active' : null}`} onClick={this.reg.bind(this)}/>
+                {/* <input type="button" value="注册" id="next" className={`next ${this.state.active ? 'active' : null}`} onClick={this.reg.bind(this)}/> */}
+                <div className={`next ${this.state.active ? 'active' : null}`} onClick={this.reg.bind(this)}>注册</div>
                 <div className="spmodl" style={{display:this.state.modl}}>{this.state.status}</div>
             </div>
         )

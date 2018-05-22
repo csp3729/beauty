@@ -1,49 +1,49 @@
 .search_all{
     .search{
         width: 100%;
-        height: 60px;
-        margin-top: 50px;
+        height: .8rem;
+        margin-top: .666667rem;
         .search_box{
-            width: 610px;
-            height: 61px;
-            margin-left: 36px;
+            width: 8.133333rem;
+            height: .813333rem;
+            margin-left: .48rem;
             background: #F3F6F9;
             float: left;
-            border-radius:15px;
+            border-radius:.2rem;
             i.fas{
                 display:inline-block;
-                font-size:30px;
+                font-size:.4rem;
                 color:#ccc;
-                margin-top:14px;
-                padding-left:25px;
+                margin-top:.186667rem;
+                padding-left:.333333rem;
             }
             input{
-                font-size:30px;
-                width: 490px;
-                height: 48px;
+                font-size:.4rem;
+                width: 6.533333rem;
+                height: .64rem;
                 border:0 none;
-                padding-left:23px;
+                padding-left:.306667rem;
                 background: #F3F6F9;
             }
         }
         span{
-            font-size:26px;
+            font-size:.346667rem;
             color:#E47596;
-            line-height: 60px;
-            margin-left: 20px;
+            line-height: .8rem;
+            margin-left: .266667rem;
         }
     }
     .search_ho{
         width: 100%;
-        padding-left: 20px;
+        padding-left: .266667rem;
         .search_ho_s{
-            height: 36px;
-            font-size:36px;
+            height: .48rem;
+            font-size:.48rem;
             color:#656565;
-            line-height: 30px;
-            margin-top: 30px;
+            line-height: .4rem;
+            margin-top: .4rem;
             i.fas{
-                margin-right: 16px;
+                margin-right: .213333rem;
             }
         }
         ul{
@@ -53,12 +53,12 @@
                 float: left;
                 span{
                     display:block;
-                    font-size:22px;
+                    font-size:.293333rem;
                     text-align:center;
-                    padding: 12px 22px;
+                    padding: .16rem .293333rem;
                     background: #EEF7F4;
-                    margin-left: 36px;
-                    margin-top: 36px;
+                    margin-left: .48rem;
+                    margin-top: .48rem;
                     border-radius:40%;
                 }
                 .his_span{
@@ -74,38 +74,38 @@
         width: 100%;
         overflow: hidden;
         li{
-            width: 340px;
-            margin-left: 23px;
-            margin-top: 24px;
-            border:1px solid #F9FAFC;
+            width: 4.533333rem;
+            margin-left: .306667rem;
+            margin-top: .32rem;
+            border:.013333rem solid #F9FAFC;
             float: left;
             img{
                 display:inline-block;
-                width: 340px;
-                height: 520px;
-                margin-bottom: 10px;
+                width: 4.533333rem;
+                height: 6.933333rem;
+                margin-bottom: .133333rem;
             }
             span{
-                font-size:28px;
+                font-size:.373333rem;
                 color:#838497;
                 background: #F3F6F9;
             }
             .pri{
                 width: 100%;
-                height: 25px;
-                font-size:24px;
+                height: .333333rem;
+                font-size:.32rem;
                 color:#3A3A3A;
-                margin-top: 10px;
+                margin-top: .133333rem;
                 .price{
-                    width: 140px;
+                    width: 1.866667rem;
                     float: left;
                 }
                 .collection{
-                    width: 100px;
+                    width: 1.333333rem;
                     float: right;
                     text-align:right;
                     i{
-                        margin-left: 10px;
+                        margin-left: .133333rem;
                     }
                 }
             }

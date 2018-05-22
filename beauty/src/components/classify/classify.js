@@ -9,6 +9,8 @@ import {lazyload} from '../../lazyload.min.js';
 class Classify extends React.Component{
     state = {
         data: [],
+        data1: [],
+        data2: [],
         targetData: [],
         search: '',
         toTop: ''
@@ -46,21 +48,14 @@ class Classify extends React.Component{
         }if(top >= 1286){
             http.get('http://10.3.133.75:88/getAllGoods').end((req, res) => {
                 this.setState({
-                    data: res.body.data.splice(0,8)
+                    data1: res.body.data.splice(5,10)
                 })
                 // console.log(this.state.data)
             })
         }if(top >= 2572){
             http.get('http://10.3.133.75:88/getAllGoods').end((req, res) => {
                 this.setState({
-                    data: res.body.data.splice(0,12)
-                })
-                // console.log(this.state.data)
-            })
-        }if( top >= 3857){
-            http.get('http://10.3.133.75:88/getAllGoods').end((req, res) => {
-                this.setState({
-                    data: res.body.data.splice(0,17)
+                    data2: res.body.data.splice(11,17)
                 })
                 // console.log(this.state.data)
             })
@@ -78,7 +73,6 @@ class Classify extends React.Component{
         })
     }
     soldSort(e){
-        console.log(e.target)
         let $sold = $('.sold').eq(0) 
         $sold.addClass('tabfoucus').siblings('span').removeClass('tabfoucus')
         let solddata = this.state.data.sort(function(a,b){
@@ -114,20 +108,6 @@ class Classify extends React.Component{
         if(targetid == null){
             return
         }
-        // let goods = this.state.data.filter(function(item){
-        //         return item.id  == targetid;                    
-        //     });
-        
-        // if(goods != null){
-        //     this.setState({
-        //         targetData : goods
-        //     })
-        //     var path = {
-        //       pathname:'/detail',
-        //       state: this.state.targetData,
-        //     }
-        //     hashHistory.push(path)
-        // }
         location.href = '#/details/'+ targetid;
     }
     toTop(){
@@ -174,6 +154,50 @@ class Classify extends React.Component{
                     <div className='jk-goodslist'>
                         {
                             this.state.data.map((item,index) => {
+                                // console.log(item.path)
+                                let path = item.path;
+                                let arr = path.split(',');
+                                let id = item.id;
+                                return(
+                                    <Link to='' key={id} data-id={id} onClick={this.transmission.bind(this)}>
+                                        <div className='jk-goods' key={arr[1]}>
+                                            <img src={arr[0]} key={arr[0]}/>
+                                            <p className='goodsname' key={item.goodsname}>{item.goodsname}</p>
+                                            <div className='details' key={item.index}>
+                                                <p className='price' key={item.prices}>￥{item.prices}</p>
+                                                <p className='sold' key={item.sales}>{item.sales}
+                                                <i className="fas fa-star"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                )
+                            })
+                        }
+                        {
+                            this.state.data1.map((item,index) => {
+                                // console.log(item.path)
+                                let path = item.path;
+                                let arr = path.split(',');
+                                let id = item.id;
+                                return(
+                                    <Link to='' key={id} data-id={id} onClick={this.transmission.bind(this)}>
+                                        <div className='jk-goods' key={arr[1]}>
+                                            <img src={arr[0]} key={arr[0]}/>
+                                            <p className='goodsname' key={item.goodsname}>{item.goodsname}</p>
+                                            <div className='details' key={item.index}>
+                                                <p className='price' key={item.prices}>￥{item.prices}</p>
+                                                <p className='sold' key={item.sales}>{item.sales}
+                                                <i className="fas fa-star"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                )
+                            })
+                        }
+                        {
+                            this.state.data2.map((item,index) => {
                                 // console.log(item.path)
                                 let path = item.path;
                                 let arr = path.split(',');
